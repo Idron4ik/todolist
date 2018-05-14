@@ -3,7 +3,7 @@
   "short_name": "todolist",
   "lang": "ru-RU",
   "start_url": "/",
-  "display": "standalone",
+  "display": "fullscreen",
   "theme_color": "#333",
   "icons": [
     {
