@@ -9,26 +9,21 @@ function out(todo){
 			</li>"
 		taskContainer.innerHTML = out;
 	}
-}
-		
-
-
+}		
 window.onload = function(){
 	var text = document.querySelector(".text");
-	var todo = ["Зробити Куруцу", "Написати Гидеона", "Випеть чаю","Придумати новий колір","Допомогти Илону Маску", "Спасти Єнотів"];
+	var todo = ["Написати Програмний Продукт", "Любити JS", "Випети чаю","Придумати новий колір","Допомогти Ілону Маску", "Врятувати Світ"];
 	
 	if(localStorage.getItem("todo") != undefined){
 		todo = JSON.parse(localStorage.getItem("todo"));
 		out(todo);
 	}
-
 	document.querySelector(".send").onclick = function(){
 		todo.push(text.value);
 		localStorage.setItem("todo", JSON.stringify(todo));
 		out(todo);
 	}
 	document.querySelector(".task-container").onclick = function(e){
-		
 		if(e.target.classList.contains("delet")){
 			var elem = e.target.parentElement;
 			var item = elem.getAttribute("data-item");
@@ -53,7 +48,6 @@ window.onload = function(){
 		if(e.target.classList.contains("save")){
 			var value = document.querySelector(".textarea");
 			value.style.display ="none";
-			
 
 			var text = e.target.parentElement.children[0].innerHTML = value.value;
 			e.target.style.display = "none";
@@ -62,7 +56,6 @@ window.onload = function(){
 			var item = elem.getAttribute("data-item");
 			todo[item] = value.value;
 			localStorage.setItem("todo", JSON.stringify(todo));
-
 		}			
 	}
 }
